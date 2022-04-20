@@ -26,6 +26,7 @@ class ContactCreate(CreateView):
 
 class ContactUpdate(UpdateView):
     model = Contact
+    template_name = 'application_form/contact_update.html'
     fields = ['name', 'email', 'address', 'phone']
     success_url = '/'
 
