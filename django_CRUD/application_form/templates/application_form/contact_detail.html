@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Contact Details #{{contact.id}}</h5>
+    </div>
+    <div class="card-body">
+    <dl class="row">
+      <dt class="col-sm-3">Contact Name</dt>
+      <dd class="col-sm-9">{{ object.name }}</dd>
+      <dt class="col-sm-3">Email</dt>
+      <dd class="col-sm-9">{{ object.email }}</dd>
+      <dt class="col-sm-3">Address</dt>
+      <dd class="col-sm-9">{{ object.address }}</dd>
+      <dt class="col-sm-3">Phone</dt>
+      <dd class="col-sm-9">{{ object.phone }}</dd>
+    </dl>
+
+    </div>
+</div>
+{% endblock %}

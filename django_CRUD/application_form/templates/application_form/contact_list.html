@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card-body">
+    <h4>Contact List</h4>
+    <a type="button" class="btn btn-info" href="{% url 'contact_create' %}">Create</a>
+    </br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in object_list %}
+            <tr>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.address }}</td>
+                <td>{{ contact.phone }}</td>
+                <td><a type="button" class="btn btn-primary" href="{% url 'contact_detail' contact.id  %}">Detail</a>
+                    <a type="button" class="btn btn-warning" href="{% url 'contact_update' contact.id  %}">Update</a>
+                    <a type="button" class="btn btn-danger" href="{% url 'contact_delete' contact.id  %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
